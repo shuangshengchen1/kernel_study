@@ -1,0 +1,9 @@
+#KERN_DIR=/lib/modules/$(shell uname -r)/build
+KERN_DIR=../kernel
+all:
+	make -C $(KERN_DIR)  M=$(shell pwd) modules
+clean:
+	make -C $(KERN_DIR)  M=$(shell pwd) clean
+
+obj-m += hello.o
+
